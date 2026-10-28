@@ -19,6 +19,12 @@ return new class extends Migration
             $table->foreignIdFor(Habit::class)->constrained()->cascadeOnDelete();
             $table->date('completed_at');
             $table->timestamps();
+
+            // Seta uma validação de unicidade nos dois campos juntos
+            // Erro:
+            // habit_id = 1 and completed_at = 11/11/2026
+            // habit_id = 1 and completed_at = 11/11/2026
+            $table->unique(['habit_id', 'completed_at']);
         });
     }
 
