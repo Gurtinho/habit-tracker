@@ -10,7 +10,7 @@
     <title>
         {{ config('app.name') }}
     </title>
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.ts'])
 </head>
 <body class="bg-[#FFEDD6] bg-grid min-h-dvh flex flex-col">
     {{-- Cabeçalho --}}

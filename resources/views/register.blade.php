@@ -14,11 +14,12 @@
                 </p>
 
                 <div class="flex flex-col gap-2 mt-4">
-                    <label for="email">Nome</label>
+                    <label for="name">Nome</label>
                     <input 
                         type="text" 
                         name="name" 
-                        id="name" 
+                        id="name"
+                        value="{{ old('name') }}"
                         class="bg-white p-2 border-2 @error('name') border-red-500 @enderror" 
                         placeholder="Digite seu nome"
                     >
@@ -34,7 +35,8 @@
                     <input 
                         type="email" 
                         name="email" 
-                        id="email" 
+                        id="email"
+                        value="{{ old('email') }}"
                         class="bg-white p-2 border-2 @error('email') border-red-500 @enderror" 
                         placeholder="Digite seu email"
                     >
@@ -62,19 +64,14 @@
                 </div>
 
                 <div class="flex flex-col gap-2 mt-4">
-                    <label for="password">Confirme a senha</label>
+                    <label for="password_confirmation">Confirme a senha</label>
                     <input
                         type="password"
                         name="password_confirmation"
                         id="password_confirmation"
-                        class="bg-white p-2 border-2 @error('password') border-red-500 @enderror"
+                        class="bg-white p-2 border-2"
                         placeholder="**************"
                     >
-                    @error('password')
-                        <p class="text-red-500 text-sm">
-                            {{ $message }}
-                        </p>
-                    @enderror
                 </div>
                 
                 <x-button label="Criar conta" props="w-full mt-4 h-12" />
